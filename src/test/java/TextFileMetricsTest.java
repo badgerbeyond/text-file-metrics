@@ -20,7 +20,8 @@ class TextFileMetricsTest {
 
     @ParameterizedTest
     @CsvSource({
-            //      String                    Word count
+            // String                 Total word count
+            // --------------------   ----------------
             "'.',                     0",
             "'..',                    0",
             "',',                     0",
@@ -38,15 +39,16 @@ class TextFileMetricsTest {
             "'21/05/2009',            1",
             "'21/05/2009 21/05/2010', 2"
     })
-    void countWordsTest(String input, Long expected) {
+    void wordCountTest(String input, Long expected) {
         Map<Integer, Long> map = new HashMap<>();
-        TextFileMetrics.wordCount(map, input);
+        TextFileMetrics.wordCounter(map, input);
         assertEquals(expected, TextFileMetrics.getTotalWordCount(map));
     }
 
     @ParameterizedTest
     @CsvSource({
-            //      String                    Total length
+            // String                 Total word length
+            // ---------------------  -----------------
             "'.',                     0",
             "'..',                    0",
             "',',                     0",
@@ -66,7 +68,7 @@ class TextFileMetricsTest {
     })
     void wordLengthTest(String input, Long expected) {
         Map<Integer, Long> map = new HashMap<>();
-        TextFileMetrics.wordCount(map, input);
+        TextFileMetrics.wordCounter(map, input);
         assertEquals(expected, TextFileMetrics.getTotalWordLength(map));
     }
 }

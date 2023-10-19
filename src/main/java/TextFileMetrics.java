@@ -52,13 +52,13 @@ public class TextFileMetrics {
         Map<Integer, Long> map = new HashMap<>();
         String line;
         while ((line = bufferedReader.readLine()) != null) {
-            wordCount(map, line);
+            wordCounter(map, line);
         }
         bufferedReader.close();
         return map;
     }
 
-    public static void wordCount(Map<Integer, Long> map, String line) {
+    public static void wordCounter(Map<Integer, Long> map, String line) {
         String[] text = line.split("[\\s,]+");
         for (String positWord : text) {
             if (isNumeric(positWord)) {
