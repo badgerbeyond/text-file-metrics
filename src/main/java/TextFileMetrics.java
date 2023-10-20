@@ -11,6 +11,8 @@ public class TextFileMetrics {
 
     public static void main(String[] args) {
 
+        Long startTime = System.currentTimeMillis();
+
         String fileName = "provided-text-file.txt";  // default example
         if (args.length != 0) {
             fileName = args[0];  // use fileName passed as parameter
@@ -45,6 +47,7 @@ public class TextFileMetrics {
         } catch (IOException e) {
             System.out.printf("IO_EXCEPTION fileName=%s message=%s\n", fileName, e.getMessage());
         }
+        System.out.printf("Elapsed milliseconds = %s\n", System.currentTimeMillis() - startTime);
     }
 
     public static Map<Integer, Long> parseTextFile(String fileName) throws IOException {
@@ -61,7 +64,7 @@ public class TextFileMetrics {
     public static void wordCounter(Map<Integer, Long> map, String line) {
         String[] text = line.split("[\\s,]+");
         for (String positWord : text) {
-            if (isNumeric(positWord)) {
+            if (!isAlpha(positWord) && isNumeric(positWord)) {
                 map.put(positWord.length(), map.getOrDefault(positWord.length(), 0L) + 1);
             } else {
                 String[] words = positWord.split("[.]+");
@@ -104,6 +107,18 @@ public class TextFileMetrics {
         } catch (NumberFormatException nfe) {
             return false;
         }
+        return true;
+    }
+
+    public static boolean isAlpha(String name) {
+        char[] chars = name.toCharArray();
+
+        for (char c : chars) {
+            if (!Character.isLetter(c)) {
+                return false;
+            }
+        }
+
         return true;
     }
 
