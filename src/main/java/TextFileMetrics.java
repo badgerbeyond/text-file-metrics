@@ -13,6 +13,18 @@ public class TextFileMetrics {
     final static DecimalFormat DECIMAL_FORMAT = new DecimalFormat("###.###");
     final static Boolean DIAGNOSTICS = FALSE;
 
+    /**
+     * TextFileMetrics is a Java class that reads the contents of a plain text file and prints the following metrics:
+     * <p>
+     * 1). The total number of words in the text file,
+     * 2). The average word length,
+     * 3). The most frequently occurring word length, and
+     * 4). A list of the number of words of each length.
+     * <p>
+     *
+     * @param args the name of the file to be analysed.
+     * @return void
+     */
     public static void main(String[] args) {
 
         Long startTime = System.currentTimeMillis();
