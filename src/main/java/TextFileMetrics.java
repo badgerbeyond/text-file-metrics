@@ -11,7 +11,7 @@ import static java.lang.Boolean.TRUE;
 
 public class TextFileMetrics {
     final static DecimalFormat DECIMAL_FORMAT = new DecimalFormat("###.###");
-    final static Boolean DIAGNOSTICS = TRUE;
+    final static Boolean DIAGNOSTICS = FALSE;
 
     public static void main(String[] args) {
 
