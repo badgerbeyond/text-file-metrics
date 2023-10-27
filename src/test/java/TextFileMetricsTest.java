@@ -41,7 +41,7 @@ class TextFileMetricsTest {
     })
     void wordCountTest(String input, Long expected) {
         Map<Integer, Long> map = new HashMap<>();
-        TextFileMetrics.wordCounter(map, input);
+        TextFileMetrics.accumulateWordLengths(input, map);
         assertEquals(expected, TextFileMetrics.getTotalWordCount(map));
     }
 
@@ -68,7 +68,7 @@ class TextFileMetricsTest {
     })
     void wordLengthTest(String input, Long expected) {
         Map<Integer, Long> map = new HashMap<>();
-        TextFileMetrics.wordCounter(map, input);
+        TextFileMetrics.accumulateWordLengths(input, map);
         assertEquals(expected, TextFileMetrics.getTotalWordLength(map));
     }
 }
