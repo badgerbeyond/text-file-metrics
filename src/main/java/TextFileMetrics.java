@@ -15,12 +15,12 @@ public class TextFileMetrics {
 
     /**
      * TextFileMetrics is a Java class that reads the contents of a plain text file and prints the following metrics:
-     * <p>
-     * 1). The total number of words in the text file,
-     * 2). The average word length,
-     * 3). The most frequently occurring word length, and
-     * 4). A list of the number of words of each length.
-     * <p>
+     * <ul>
+     * <li>The total number of words in the text file,
+     * <li>The average word length,
+     * <li>The most frequently occurring word length, and
+     * <li>A list of the number of words of each length.
+     * </ul>
      *
      * @param args the name of the file to be analysed.
      * @return void
